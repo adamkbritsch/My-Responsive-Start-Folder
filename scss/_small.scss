@@ -1,0 +1,162 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  height: 100%;
+}
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: $defaultFont;
+  font-weight: $normalWeight;
+  color: $fontColor;
+  background-color: $bgPrimary;
+}
+
+#headerWrapper {
+  background-color: $bgSurface;
+  color: $textPrimary;
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem $gutter;
+  gap: 8px;
+  h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: $normalWeight;
+    color: $accentHighlight;
+  }
+}
+
+#navWrapper {
+  background-color: $bgSurface;
+}
+
+nav {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li {
+      flex: 1;
+      border-right: 1px solid $borderColor;
+    }
+  }
+  li.active {
+    background-color: $accentPrimary;
+  }
+  a {
+    display: block;
+    padding: 0.75rem;
+    color: $textPrimary;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      color: lighten($accentHighlight, 8%);
+      background-color: rgba($accentPrimary, 0.18);
+    }
+  }
+  li.active a {
+    color: #fff;
+  }
+}
+
+// begin the footer
+#footerWrapper {
+    background-color: $bgSurface;
+}
+footer {
+    padding: 0.5rem $gutter;
+    color: $textSecondary;
+    border-top: 1px solid $borderColor;
+    p{
+        margin: 0;
+        font-weight: $lightWeight;
+    }
+}
+
+/* Global focus visibility for keyboard users */
+:focus-visible {
+  outline: 3px solid $accentHighlight;
+  outline-offset: 2px;
+}
+
+/* Links */
+a {
+  color: $accentHighlight;
+  text-decoration: none;
+}
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.625rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: $normalWeight;
+  line-height: 1.1;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 150ms, color 150ms, border-color 150ms, box-shadow 150ms;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: $accentPrimary;
+  color: #fff;
+  border-color: darken($accentPrimary, 6%);
+  &:hover,
+  &:focus-visible {
+    background-color: darken($accentPrimary, 8%);
+  }
+  &:active {
+    background-color: darken($accentPrimary, 12%);
+  }
+}
+
+.btn-highlight {
+  background-color: $accentHighlight;
+  color: #111;
+  border-color: darken($accentHighlight, 10%);
+  &:hover,
+  &:focus-visible {
+    background-color: darken($accentHighlight, 6%);
+  }
+  &:active {
+    background-color: darken($accentHighlight, 10%);
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  color: $textPrimary;
+  border-color: $accentHighlight;
+  &:hover,
+  &:focus-visible {
+    background-color: rgba($accentHighlight, 0.15);
+  }
+}
+
+/* Card */
+.card {
+  background-color: $bgSurface;
+  color: $textPrimary;
+  border: 1px solid $borderColor;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}

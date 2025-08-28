@@ -1,0 +1,25 @@
+// Dark Knight theme palette (accessible)
+// Base surfaces
+$bgPrimary: #0b0f14;   // near-black blue
+$bgSurface: #12161c;   // dark surface for sections
+
+// Accents
+$accentPrimary: #1d4ed8;   // deep Gotham blue
+$accentHighlight: #f5c518; // bat-signal yellow
+
+// Text and borders
+$textPrimary: #e6e6e6;   // light text on dark
+$textSecondary: #b9c0ca; // muted text
+$borderColor: #2a2f36;   // subtle borders/dividers
+
+// Back-compat variables used across partials
+$primaryColor: $accentHighlight;
+$secondaryColor: $accentPrimary;
+$fontColor: $textPrimary;
+
+$defaultFont: "Inter", sans-serif;
+$lightWeight:300;
+$normalWeight:500;
+$boldWeight:700;
+
+$gutter: 16px;

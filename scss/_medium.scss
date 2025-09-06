@@ -2,3 +2,24 @@ header {
     padding: 2rem $gutter;
     h1 {font-size: 2rem;}
 }
+
+/* NAVIGATION STUFF GOES HERE  */
+nav {
+  ul {
+    display: flex;
+    gap: $gutter;
+    padding: 0;
+    margin: 0 $gutter;
+  }
+  li + li { margin-top: 0; } // unset mobile spacing
+  a { padding: 0.75rem $gutter; }
+}// end nav
+
+/* gallery: two-up at medium */
+.parent {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $gutter;
+  padding: 0 $gutter;
+  > div { flex: 1 1 calc(50% - #{$gutter}); }
+}

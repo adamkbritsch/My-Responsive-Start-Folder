@@ -21,55 +21,54 @@ body {
   background-color: $bgPrimary;
 }
 
-#headerWrapper {
-  background-color: $bgSurface;
-  color: $textPrimary;
-}
-
+#headerWrapper {border-bottom: 1px solid $borderColor;}
 header {
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem $gutter;
-  gap: 8px;
-  h1 {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: $normalWeight;
-    color: $accentHighlight;
-  }
-}
+    display: grid;
+    grid-template-columns: 40px 1fr auto; // logo, brand, phone
+    column-gap: $gutter;
+    align-items: center; //vertically
+    padding: .5rem $gutter;
+    span {
+        font-size: 1.6rem;
+        font-weight: $lightWeight;
+        color: $primaryColor;
+    }
+    a.phone { justify-self: end; color: $textPrimary; text-decoration: none; font-weight: $normalWeight; }
+} // end header
+
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 
 #navWrapper {
   background-color: $bgSurface;
 }
 
+/* Mobile-first: vertical, full-width menu */
 nav {
   ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    li {
-      flex: 1;
-      border-right: 1px solid $borderColor;
-    }
+    margin: 0 $gutter; // inset the list from edges like the mock
+    display: block;
   }
-  li.active {
-    background-color: $accentPrimary;
-  }
+  li { margin: 0; }
+
   a {
     display: block;
-    padding: 0.75rem;
+    padding: 0.9rem $gutter;
     color: $textPrimary;
-    text-align: center;
     text-decoration: none;
-    &:hover {
-      color: lighten($accentHighlight, 8%);
-      background-color: rgba($accentPrimary, 0.18);
-    }
+    text-align: left; // left-align like the mock
   }
+
+  // space between items like the mock
+  li + li { margin-top: 1.25rem; }
+
+  // active item gets pill background and stays full-width
   li.active a {
-    color: #fff;
+    width: 100%;
+    background-color: rgba($textPrimary, 0.12);
+    border-radius: 14px;
   }
 }
 
@@ -81,6 +80,7 @@ footer {
     padding: 0.5rem $gutter;
     color: $textSecondary;
     border-top: 1px solid $borderColor;
+    text-align: center;
     p{
         margin: 0;
         font-weight: $lightWeight;
@@ -159,4 +159,20 @@ a:focus-visible {
   border: 1px solid $borderColor;
   border-radius: 0.5rem;
   padding: 1rem;
+}
+
+/* Main gallery/grid: mobile-first flex layout */
+.parent {
+  display: flex;
+  flex-direction: column;
+  gap: $gutter;
+  padding: 0 $gutter;
+  > div { flex: 1 1 100%; }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+  }
+  p { margin: 0.25rem 0 0 0; }
 }

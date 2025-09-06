@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Start File | The Front End Developer</title>
-    <meta name="description" content="">
+    <title>Shows | Marigold Performing Arts Center</title>
+    <meta name="description" content="Marigold Performing Arts Center presents live theatre, concerts, and community arts education in the heart of downtown.">
     <meta name="author" content="Adam Britsch">
 
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
     </noscript>
 
     <!-- Site styles -->
-    <link href="css/styles.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 
 <!-- favicon stuff --> 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -35,24 +35,89 @@
 
     <div id="headerWrapper">
         <header>
-            <img src="images/logo.png" alt="logo" width="40" height="40">
-            <h1>The Front End Developer</h1>
+            <a href="#"><img src="images/logo1x.png" alt="Marigold Performing Arts Center logo" width="50" height="50" srcset="images/logo1x.png 1x, images/logo2x.png 2x, images/logo3x.png 3x"></a>
+            <span class="brand">Marigold Performing Arts Center</span>
+            <a class="phone" href="tel:5551234567" aria-label="Call Marigold Performing Arts Center">(555) 123-4567</a>
         </header>
     </div>
 
     <div id="navWrapper">
         <nav>
             <ul>
-                <li class="active"><a href="#">Learn</a></li>
-                <li><a href="#">Practice</a></li>
-                <li><a href="#">Implement</a></li>
+                <li><a href="#">Home</a></li>
+                <li class="active"><a href="#" aria-current="page">Shows</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Support</a></li>
             </ul>
         </nav>
     </div>
     
     <div id="mainWrapper">
         <main>
-    <h1>Learn</h1>
+    <h1>Shows</h1>
+    <div class="parent">
+        <div class="card">
+            <img src="images/galleryA.webp" alt="Poster for West Side Story" width="500" height="250" loading="lazy">
+            <p><strong>West Side Story</strong></p>
+            <p class="meta"><time datetime="2024-10-04">Oct 4–27</time></p>
+        </div>
+        <div class="card">
+            <img src="images/galleryB.webp" alt="Poster for Fiddler on the Roof" width="500" height="250" loading="lazy">
+            <p><strong>Fiddler on the Roof</strong></p>
+            <p class="meta"><time datetime="2024-11-07">Nov 7–23</time></p>
+        </div>
+        <div class="card">
+            <img src="images/galleryC.webp" alt="Poster for Hamilton" width="500" height="250" loading="lazy">
+            <p><strong>Hamilton</strong></p>
+            <p class="meta"><time datetime="2024-12-05">Dec 5–21</time></p>
+        </div>
+        <div class="card">
+            <img src="images/galleryD.webp" alt="Poster for Les Misérables" width="500" height="250" loading="lazy">
+            <p><strong>Les Misérables</strong></p>
+            <p class="meta"><time datetime="2025-01-09">Jan 9–26</time></p>
+        </div>
+        <div class="card">
+            <img src="images/galleryE.webp" alt="Poster for Wicked" width="500" height="250" loading="lazy">
+            <p><strong>Wicked</strong></p>
+            <p class="meta"><time datetime="2025-02-06">Feb 6–22</time></p>
+        </div>
+        <div class="card">
+            <img src="images/galleryF.webp" alt="Poster for The Phantom of the Opera" width="500" height="250" loading="lazy">
+            <p><strong>The Phantom of the Opera</strong></p>
+            <p class="meta"><time datetime="2025-03-07">Mar 7–29</time></p>
+        </div>
+        <!-- additional six cards to reach 12 -->
+        <div class="card">
+            <img src="images/galleryA.webp" alt="Poster for West Side Story" width="500" height="250" loading="lazy">
+            <p><strong>West Side Story (Encore)</strong></p>
+            <p class="meta"><time datetime="2025-04-10">Apr 10–19</time></p>
+        </div>
+        <div class="card">
+            <img src="images/galleryB.webp" alt="Poster for Fiddler on the Roof" width="500" height="250" loading="lazy">
+            <p><strong>Fiddler: In Concert</strong></p>
+            <p class="meta"><time datetime="2025-05-01">May 1–3</time></p>
+        </div>
+        <div class="card">
+            <img src="images/galleryC.webp" alt="Poster for Hamilton" width="500" height="250" loading="lazy">
+            <p><strong>Hamilton (Student Matinee)</strong></p>
+            <p class="meta"><time datetime="2025-05-15">May 15</time></p>
+        </div>
+        <div class="card">
+            <img src="images/galleryD.webp" alt="Poster for Les Misérables" width="500" height="250" loading="lazy">
+            <p><strong>Les Misérables: Highlights</strong></p>
+            <p class="meta"><time datetime="2025-06-05">Jun 5–7</time></p>
+        </div>
+        <div class="card">
+            <img src="images/galleryE.webp" alt="Poster for Wicked" width="500" height="250" loading="lazy">
+            <p><strong>Wicked (Talkback Night)</strong></p>
+            <p class="meta"><time datetime="2025-06-26">Jun 26</time></p>
+        </div>
+        <div class="card">
+            <img src="images/galleryF.webp" alt="Poster for The Phantom of the Opera" width="500" height="250" loading="lazy">
+            <p><strong>Phantom: Gala Performance</strong></p>
+            <p class="meta"><time datetime="2025-07-12">Jul 12</time></p>
+        </div>
+    </div>
         </main>
     </div>
 

@@ -344,57 +344,46 @@ body {
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  padding: 1rem 16px;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  padding: 0.5rem 16px;
+  gap: 16px;
 }
-header h1 {
-  margin: 0;
+header .brand {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 300;
   color: #f5c518;
 }
+header .phone { justify-self: end; color: #e6e6e6; text-decoration: none; }
 
 #navWrapper {
   background-color: #12161c;
 }
 
+/* Mobile-first: vertical, full-width menu */
 nav ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 0 16px;
+  display: block;
 }
 nav ul li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  border-right: 1px solid #2a2f36;
+  border-right: 0;
 }
-nav li.active {
-  background-color: #1d4ed8;
-}
+nav li + li { margin-top: 1.25rem; }
 nav a {
   display: block;
   padding: 0.75rem;
   color: #e6e6e6;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
 }
 nav a:hover {
   color: rgb(246.6929460581, 206.8190871369, 63.1070539419);
   background-color: rgba(29, 78, 216, 0.18);
 }
-nav li.active a {
-  color: #fff;
-}
+nav li.active a { width: 100%; background-color: rgba(230, 230, 230, 0.12); border-radius: 14px; }
 
 #footerWrapper {
   background-color: #12161c;
@@ -404,6 +393,7 @@ footer {
   padding: 0.5rem 16px;
   color: #b9c0ca;
   border-top: 1px solid #2a2f36;
+  text-align: center;
 }
 footer p {
   margin: 0;
@@ -485,6 +475,17 @@ a:focus-visible {
   padding: 1rem;
 }
 
+/* Main gallery/grid: mobile-first flex layout */
+.parent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+}
+.parent > div { flex: 1 1 100%; }
+.parent img { width: 100%; height: auto; display: block; border-radius: 0.5rem; }
+.parent p { margin: 0.25rem 0 0 0; }
+
 @media only screen and (min-width: 35rem) {
   header {
     padding: 2rem 16px;
@@ -492,10 +493,36 @@ a:focus-visible {
   header h1 {
     font-size: 2rem;
   }
+  /* switch nav to horizontal at medium */
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 16px;
+    margin: 0 16px;
+  }
+  nav li + li { margin-top: 0; }
+  /* gallery: two-up at medium */
+  .parent {
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 16px;
+    padding: 0 16px;
+  }
+  .parent > div { -webkit-box-flex: 1; -ms-flex: 1 1 calc(50% - 16px); flex: 1 1 calc(50% - 16px); }
 }
 @media only screen and (min-width: 60rem) {
-  header, nav, main, footer {
+  header, main, footer {
     max-width: 60rem;
     margin: auto;
   }
+  nav { max-width: 75rem; margin: auto; }
+  /* NAVIGATION STUFF GOES HERE  */
+  nav ul li a {
+    padding: 0.5rem 16px;
+    font-size: 0.9rem;
+  }
+  /* gallery: three-up at large */
+  .parent > div { -webkit-box-flex: 1; -ms-flex: 1 1 calc(33.333% - 16px); flex: 1 1 calc(33.333% - 16px); }
 }
